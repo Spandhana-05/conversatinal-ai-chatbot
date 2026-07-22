@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NovaMind AI - Conversational AI Chatbot</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<div class="app">
+
+    <aside class="sidebar">
+        <div class="logo">
+            <div class="logo-icon">✦</div>
+            <div>
+                <h2>NovaMind</h2>
+                <p>AI Assistant</p>
+            </div>
+        </div>
+
+        <button class="new-chat" onclick="newChat()">
+            + New Chat
+        </button>
+
+        <h4>CHAT MODES</h4>
+
+        <button class="mode active"
+                onclick="changeMode('qa', this)">
+            💡 Q & A
+        </button>
+
+        <button class="mode"
+                onclick="changeMode('summarize', this)">
+            📄 Summarize
+        </button>
+
+        <button class="mode"
+                onclick="changeMode('recommend', this)">
+            🔖 Recommend
+        </button>
+
+        <button class="mode"
+                onclick="changeMode('creative', this)">
+            ✨ Creative
+        </button>
+
+        <div class="about">
+            <h4>ABOUT PROJECT</h4>
+            <p>
+                A Conversational AI Chatbot designed using
+                prompt engineering concepts and multiple
+                conversation modes.
+            </p>
+        </div>
+    </aside>
+
+
+    <main class="main">
+
+        <header>
+            <h1>Conversational AI Chatbot</h1>
+            <p>Powered by Prompt Engineering</p>
+        </header>
+
+
+        <div class="chat-container" id="chatContainer">
+
+            <div class="message bot-message">
+                <div class="avatar">✦</div>
+
+                <div class="bubble">
+                    <strong>Hello! I'm NovaMind AI 👋</strong>
+
+                    <p>
+                        Select a conversation mode and ask me
+                        anything. I'm here to help!
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="input-area">
+
+            <input
+                type="text"
+                id="userInput"
+                placeholder="Type your message here..."
+                onkeypress="handleEnter(event)"
+            >
+
+            <button id="sendButton"
+                    onclick="sendMessage()">
+                ➤
+            </button>
+
+        </div>
+
+        <p class="footer-text">
+            NovaMind AI • Conversational AI & Prompt Engineering Project
+        </p>
+
+    </main>
+
+</div>
+
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
